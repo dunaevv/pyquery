@@ -96,6 +96,7 @@ def _requests(url, kwargs):
         if k in kwargs:
             kw[k] = kwargs[k]
     proxies = _proxy()
+    print("[info] ip", proxies)
     resp = meth(
         url=url,
         headers=HEADERS,
