@@ -125,10 +125,14 @@ def _urllib(url, kwargs):
         method,
         kwargs,
     )
+    proxies = _proxy()
+    print("[info] ip", proxies)
+
     return urlopen(
         url,
         data,
         timeout=kwargs.get("timeout", DEFAULT_TIMEOUT),
+        proxies={"http": proxies},
     )
 
 
